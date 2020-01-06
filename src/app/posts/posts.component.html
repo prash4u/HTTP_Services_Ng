@@ -1,0 +1,52 @@
+
+<ul class="list-group">
+    <li
+    *ngFor="let post of posts3 | async  "
+    class="list-group-item">
+{{post.title}}
+</li>
+</ul> 
+
+<!--async can be used -->
+<!--
+<ul class="list-group">
+    <li
+    *ngFor="let post of posts111 | async  "
+    class="list-group-item">
+{{post.title}}
+</li>
+</ul> 
+-->
+
+
+<button (click)=getPosts()>Get Posts</button>
+<div *ngFor="let poster of posts1 | async">
+    {{poster | json}}
+</div>
+
+<button (click)=getPosts1()>Get Posts1</button>
+<div *ngFor="let poster of posts2 | async">
+    {{poster.title | json}}
+</div> 
+
+
+
+
+<button (click)=getPosts2()>Get Check_HttpParams</button>
+<div *ngFor="let poster of posts | async">
+    {{poster | json}}
+</div>
+
+<button (click)=getPosts3()>Get Check_Auth</button>
+<div *ngFor="let poster of posts | async">
+    {{poster | json}}
+</div>
+
+<button (click)=CreatePost()>CreatePost</button>
+<br>
+    {{newpost | async| json}}
+
+<button (click)=CreatePost2()>CreatePost_Retry_Catch</button>
+<br>
+{{newpost | async| json}}    
+
